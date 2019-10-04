@@ -11,7 +11,8 @@
 
 <body>
     <h1>Connect Four</h1>
-    <div id="game">
+    <div id="colorTurn">Player1 turn</div>
+    
         <div id="columnOne">
             <div id="a6" class="board"></div>
             <div id="a5" class="board"></div>
@@ -20,7 +21,7 @@
             <div id="a2" class="board"></div>
             <div id="a1" class="board"></div>
         </div>
-    </div>
+    
     <div id="columnTwo">
         <div id="b6" class="board"></div>
         <div id="b5" class="board"></div>
@@ -70,10 +71,14 @@
         <div id="g1" class="board"></div>
     </div>
     </div>
-    <div class="left leg"></div>
-    <div class="right leg"></div>
+
     <button id="newGame"> New Game</button>
     <button id="reset">Reset</button>
+
+    <!--manual and auto function maybe-->
+    <div id="player1" class="button" onclick="toggle_player1()">Player1</div>
+    <div id="player2" class="button" onclick="toggle_player2()">Player2</div>
+
 </body>
 </html>
 
