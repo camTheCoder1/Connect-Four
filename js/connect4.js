@@ -12,6 +12,11 @@ function checkWinner(check) {
             if (checkLine(check[row][col], check[row+1][col], check[row+2][col], check[row+3][col]))
                 return check[row][col];
 
+    // Check for winner going right
+    for (row = 0; row < 6; row++)
+        for (col = 0; col < 4; col++)
+            if (checkLine(check[row][col], check[row][col+1], check[row][col+2], check[row][col+3]))
+                return check[row][col];
 
     return 0;
 }
