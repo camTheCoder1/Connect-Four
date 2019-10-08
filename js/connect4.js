@@ -45,9 +45,9 @@ function render() {
             cells[5 - i].style.backgroundColor = playerColors[board[idx][i]];
         }
         if (win) {
-        msgEl.innerHTML = `Congrats, Player ${playerColors[win].toUpperCase()} Wins!`;
+        msgEl.innerHTML = `${playerColors[win].toUpperCase()} Wins!`;
         } else {
-        msgEl.innerHTML = `It's Player ${playerColors[turn].toUpperCase()}'s Turn!`;
+        msgEl.innerHTML = `${playerColors[turn].toUpperCase()}'s Turn!`;
         }
     });
 }
