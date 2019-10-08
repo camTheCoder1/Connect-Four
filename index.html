@@ -10,75 +10,67 @@
 </head>
 
 <body>
-    <h1>Connect Four</h1>
-    <div id="colorTurn">Player1 turn</div>
-    
-        <div id="columnOne">
-            <div id="a6" class="board"></div>
-            <div id="a5" class="board"></div>
-            <div id="a4" class="board"></div>
-            <div id="a3" class="board"></div>
-            <div id="a2" class="board"></div>
-            <div id="a1" class="board"></div>
-        </div>
-    
-    <div id="columnTwo">
-        <div id="b6" class="board"></div>
-        <div id="b5" class="board"></div>
-        <div id="b4" class="board"></div>
-        <div id="b3" class="board"></div>
-        <div id="b2" class="board"></div>
-        <div id="b1" class="board"></div>
-    </div>
-    <div id="columnThree">
-        <div id="c6" class="board"></div>
-        <div id="c5" class="board"></div>
-        <div id="c4" class="board"></div>
-        <div id="c3" class="board"></div>
-        <div id="c2" class="board"></div>
-        <div id="c1" class="board"></div>
-    </div>
-    <div id="columnFour">
-        <div id="d6" class="board"></div>
-        <div id="d5" class="board"></div>
-        <div id="d4" class="board"></div>
-        <div id="d3" class="board"></div>
-        <div id="d2" class="board"></div>
-        <div id="d1" class="board"></div>
-    </div>
-    <div id="columnFive">
-        <div id="e6" class="board"></div>
-        <div id="e5" class="board"></div>
-        <div id="e4" class="board"></div>
-        <div id="e3" class="board"></div>
-        <div id="e2" class="board"></div>
-        <div id="e1" class="board"></div>
-    </div>
-    <div id="columnSix">
-        <div id="f6" class="board"></div>
-        <div id="f5" class="board"></div>
-        <div id="f4" class="board"></div>
-        <div id="f3" class="board"></div>
-        <div id="f2" class="board"></div>
-        <div id="f1" class="board"></div>
-    </div>
-    <div id="columnSeven">
-        <div id="g6" class="board"></div>
-        <div id="g5" class="board"></div>
-        <div id="g4" class="board"></div>
-        <div id="g3" class="board"></div>
-        <div id="g2" class="board"></div>
-        <div id="g1" class="board"></div>
-    </div>
-    </div>
-
-    <button id="newGame"> New Game</button>
-    <button id="reset">Reset</button>
-
-    <!--manual and auto function maybe-->
-    <div id="player1" class="button" onclick="toggle_player1()">Player1</div>
-    <div id="player2" class="button" onclick="toggle_player2()">Player2</div>
-
-</body>
+        <h1>Connect Four</h1>
+        <h1 id="message"></h1>
+        <h2 id="player1">Player 1</h2>
+        <h2 id="player2">Player 2</h2>
+        <table>
+            <tr>
+                <td id="a1" data-col="0"></td>
+                <td id="a2" data-col="1"></td>
+                <td id="a3" data-col="2"></td>
+                <td id="a4" data-col="3"></td>
+                <td id="a5" data-col="4"></td>
+                <td id="a6" data-col="5"></td>
+                <td id="a7" data-col="6"></td>
+            </tr>
+            <tr>
+                <td id="b1" data-col="0"></td>
+                <td id="b2" data-col="1"></td>
+                <td id="b3" data-col="2"></td>
+                <td id="b4" data-col="3"></td>
+                <td id="b5" data-col="4"></td>
+                <td id="b6" data-col="5"></td>
+                <td id="b7" data-col="6"></td>
+            </tr>
+            <tr>
+                <td id="c1" data-col="0"></td>
+                <td id="c2" data-col="1"></td>
+                <td id="c3" data-col="2"></td>
+                <td id="c4" data-col="3"></td>
+                <td id="c5" data-col="4"></td>
+                <td id="c6" data-col="5"></td>
+                <td id="c7" data-col="6"></td>
+            </tr>
+            <tr>
+                <td id="cell-21" data-col="0"></td>
+                <td id="cell-22" data-col="1"></td>
+                <td id="cell-23" data-col="2"></td>
+                <td id="cell-24" data-col="3"></td>
+                <td id="cell-25" data-col="4"></td>
+                <td id="cell-26" data-col="5"></td>
+                <td id="cell-27" data-col="6"></td>
+            </tr>
+            <tr>
+                <td id="cell-28" data-col="0"></td>
+                <td id="cell-29" data-col="1"></td>
+                <td id="cell-30" data-col="2"></td>
+                <td id="cell-31" data-col="3"></td>
+                <td id="cell-32" data-col="4"></td>
+                <td id="cell-33" data-col="5"></td>
+                <td id="cell-34" data-col="6"></td>
+            </tr>
+            <tr>
+                <td id="d1" data-col="0"></td>
+                <td id="d2" data-col="1"></td>
+                <td id="d3 data-col="2"></td>
+                <td id="d4" data-col="3"></td>
+                <td id="d5" data-col="4"></td>
+                <td id="d6" data-col="5"></td>
+                <td id="d7" data-col="6"></td>
+            </tr>
+        </table>
+        <button>New Game</button> 
+        <script src="js/connect4.js"></script>
+    </body>
 </html>
-

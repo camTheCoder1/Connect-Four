@@ -3,6 +3,20 @@
 
 }
 
+#nav {
+    left: 0%;
+    top: 0%;
+    width: 33.3333333333%;
+    height: 100%;
+}
+
+#board{
+    left: 33.3333333333%;
+    top: 0%;
+    width: 66.6666666667;
+    height: 100%;
+}
+
 #columnOne div{
     width:76px;
     height:76px;
