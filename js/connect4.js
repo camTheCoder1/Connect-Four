@@ -95,14 +95,13 @@ function checkVert(colArr) {
 
 // Check for winner going right
 function checkHoriz(colIdx) {
-    if (colIdx > 3) {
+    if (colIdx > 3) 
         return null;
-    }
-    for (var row = 0; row < 7; row++) {
-        if (Math.abs(board[row][colIdx] + board[row][colIdx + 1] + board[row][colIdx + 2] + board[row][colIdx + 3]) === 4) {
-            return board[row][colIdx];
-        }
-    }
+    
+    for (var row = 0; row < 7; row++) 
+        if (Math.abs(board[colIdx][row] + board[colIdx + 1][row] + board[colIdx + 2][row] + board[colIdx + 3][row]) === 4) 
+            return board[colIdx][row];
+    
     return null;
 }
 
