@@ -1,29 +1,3 @@
-var playerColors = {
-    '1': 'black',
-    '-1': 'red',
-    'null': 'white'
-};
-
-var board, turn, win;
-
-var msgEl = document.getElementById('message');
-
-document.querySelector('table').addEventListener('click', function(evt) {
-    if (win) return;
-    var colIdx = parseInt(evt.target.getAttribute('data-col'));
-    var column = board[colIdx];
-    if (!column.includes(null)) return;
-    column[column.indexOf(null)] = turn;
-    turn *= -1;
-    win = checkWinner();
-    render();
-});
-
-document.querySelector('button').addEventListener('click', function(evt) {
-    initialize();
-    render();
-});
-
 function initialize() {
     board = [
         [null, null, null, null, null, null],
@@ -38,6 +12,32 @@ function initialize() {
     win = null;
 }
 
+var playerColors = {
+    '1': 'black',
+    '-1': 'red',
+    'null': 'white'
+};
+
+var board, turn, win;
+
+var mess = document.getElementById('message');
+
+document.querySelector('table').addEventListener('click', function(evt) {
+    if (win) return;
+    var colIdx = parseInt(evt.target.getAttribute('data-col'));
+    var column = board[colIdx];
+    if (!column.includes(null)) return;
+column[column.indexOf(null)] = turn;
+    turn *= -1;
+    win = getWinner();
+    render();
+});
+
+document.querySelector('button').addEventListener('click', function(evt) {
+    initialize();
+    render();
+});
+
 function render() {
     board.forEach(function(colArr, idx) {
         var cells = document.querySelectorAll(`[data-col="${idx}"]`)
@@ -45,53 +45,72 @@ function render() {
             cells[5 - i].style.backgroundColor = playerColors[board[idx][i]];
         }
         if (win) {
-        msgEl.innerHTML = `${playerColors[win].toUpperCase()} Wins!`;
+        mess.innerHTML = `${playerColors[win].toUpperCase()} Wins!`;
         } else {
-        msgEl.innerHTML = `${playerColors[turn].toUpperCase()}'s Turn!`;
+        mess.innerHTML = ` ${playerColors[turn].toUpperCase()}'s Turn!`;
         }
     });
 }
 
-function checkLine(cellA, cellB, cellC, cellD) {
-    // Check first cell non-zero and all cells match
-    return ((cellA != 0) && (cellA == cellB) && (cellA == cellC) && (cellA == cellD));
+function getWinner() {
+    var winner = null;
+    for (var col = 0; col < board.length; col++) {
+        winner = getColumnWinner(col);
+        if (winner) break;
+    }
+    return winner;
 }
 
-function checkWinner(check) {
-    // Check for winner going down
-    for (row = 0; row < 3; row++) {
-        for (col = 0; col < 7; col++) {
-            if (Math.abs(checkLine(check[row][col], check[row + 1][col], check[row + 2][col], check[row + 3][col]))) {
-                return check[row][col];
+function getColumnWinner(colIdx) {
+    var winner; 
+    var colArr = board[colIdx];
+    winner = checkVert(colArr);
+    if (winner){
+        return winner;
+    } 
+    winner = checkHoriz(colIdx);
+    if (winner){
+         return winner;
+        }
+    winner = checkDiag(colIdx, 1);
+    if (winner){
+        return winner;
+    } 
+    winner = checkDiag(colIdx, -1);
+    if (winner){
+        return winner;
+    } 
+    return null;
+}
 
-            }
-        }
-    }
-    // Check for winner going right
-    for (row = 0; row < 6; row++){
-        for (col = 0; col < 4; col++){
-            if (Math.abs(checkLine(check[row][col], check[row][col + 1], check[row][col + 2], check[row][col + 3]))){
-                return check[row][col];
-            }
-        }
-    }
-    // Check for winner diagnally going down-right
-    for (row = 0; row < 3; row++){
-        for (col = 0; col < 4; col++){
-            if (Math.abs(checkLine(check[row][col], check[row + 1][col + 1], check[row + 2][col + 2], check[row + 3][col + 3]))){
-                return check[row][col];
-            }
-        }
-    }
-    // Check for winner diagnally going down-left
-    for (row = 3; row < 6; row++){
-        for (col = 0; col < 4; col++){
-            if (Math.abs(checkLine(check[row][col], check[row - 1][col + 1], check[row - 2][col + 2], check[row - 3][col + 3]))){
-                return check[row][col];
-            }
-        }
+    // Check for winner going down
+function checkVert(colArr) {
+    for (var row = 0; row < 3; row++) {
+        if (Math.abs(colArr[row] + colArr[row + 1] + colArr[row + 2] + colArr[row + 3]) === 4) return colArr[row];
     }
     return null;
 }
+
+    // Check for winner going right
+function checkHoriz(colIdx) {
+    if (colIdx > 3) return null;
+    for (var row = 0; row < 7; row++) {
+        if (Math.abs(board[colIdx][row] + board[colIdx + 1][row] + board[colIdx + 2][row] + board[colIdx + 3][row]) === 4) return board[colIdx][row];
+    }
+    return null;
+}
+
+    //Check for winner going diagnal
+function checkDiag(colIdx, dia) {
+    if (colIdx > 3) return null;
+    for (var row = 0; row < 7; row++) {
+        if ((dia === 1 && row > 2) || (dia === -1 && row > 3)) break;
+        if (Math.abs(board[colIdx][row] + board[colIdx + 1][row + dia] + board[colIdx + 2][row + dia * 2] + board[colIdx + 3][row + dia * 3]) === 4) return board[colIdx][row];
+    }
+    return null;
+}
+
+
+
 initialize();
 render();

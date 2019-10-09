@@ -5,6 +5,17 @@
     font-family: 'VT323', monospace;
 }
 
+#nav{
+    left:0%;
+    top:0%;
+    width: 33.3333333333%;
+    height: 100%;
+}
+
+div{
+    position: absolute;
+    text-align: center;
+}
 h1 {
     color: whitesmoke;
     font-size: 50px;
