@@ -13,7 +13,7 @@ function initialize() {
 }
 
 var playerColors = {
-    '1': 'black',
+    '1': 'yellow',
     '-1': 'red',
     'null': 'white'
 };
