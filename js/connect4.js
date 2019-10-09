@@ -22,23 +22,23 @@ var board, turn, win;
 
 var mess = document.getElementById('message');
 
-document.querySelector('table').addEventListener('click', function(evt) {
+document.querySelector('table').addEventListener('click', function(e) {
     if (win) return;
-    var colIdx = parseInt(evt.target.getAttribute('data-col'));
+    var colIdx = parseInt(e.target.getAttribute('data-col'));
     var column = board[colIdx];
     if (!column.includes(null)) return;
 column[column.indexOf(null)] = turn;
     turn *= -1;
     win = getWinner();
-    render();
+    check();
 });
 
-document.querySelector('button').addEventListener('click', function(evt) {
+document.querySelector('button').addEventListener('click', function(e) {
     initialize();
-    render();
+    check();
 });
 
-function render() {
+function check() {
     board.forEach(function(colArr, idx) {
         var cells = document.querySelectorAll(`[data-col="${idx}"]`)
         for( var i = 0; i < cells.length; i++) {
@@ -86,26 +86,38 @@ function getColumnWinner(colIdx) {
     // Check for winner going down
 function checkVert(colArr) {
     for (var row = 0; row < 3; row++) {
-        if (Math.abs(colArr[row] + colArr[row + 1] + colArr[row + 2] + colArr[row + 3]) === 4) return colArr[row];
+        if (Math.abs(colArr[row] + colArr[row + 1] + colArr[row + 2] + colArr[row + 3]) === 4){
+            return colArr[row];
+        } 
     }
     return null;
 }
 
     // Check for winner going right
 function checkHoriz(colIdx) {
-    if (colIdx > 3) return null;
+    if (colIdx > 3){
+      return null;  
+    } 
     for (var row = 0; row < 7; row++) {
-        if (Math.abs(board[colIdx][row] + board[colIdx + 1][row] + board[colIdx + 2][row] + board[colIdx + 3][row]) === 4) return board[colIdx][row];
+        if (Math.abs(board[row][colIdx] + board[row][colIdx + 1] + board[row][colIdx + 2]+ board[row][colIdx + 3]) === 4){
+            return board[row][colIdx];
+        } 
     }
     return null;
 }
 
     //Check for winner going diagnal
 function checkDiag(colIdx, dia) {
-    if (colIdx > 3) return null;
+    if (colIdx > 3) {
+    return null;
+    }
     for (var row = 0; row < 7; row++) {
-        if ((dia === 1 && row > 2) || (dia === -1 && row > 3)) break;
-        if (Math.abs(board[colIdx][row] + board[colIdx + 1][row + dia] + board[colIdx + 2][row + dia * 2] + board[colIdx + 3][row + dia * 3]) === 4) return board[colIdx][row];
+        if ((dia === 1 && row > 2) || (dia === -1 && row > 3)){
+            break;
+        } 
+        if (Math.abs(board[colIdx][row] + board[colIdx + 1][row + dia] + board[colIdx + 2][row + dia * 2] + board[colIdx + 3][row + dia * 3]) === 4) {
+        return board[colIdx][row];
+        }
     }
     return null;
 }
@@ -113,4 +125,4 @@ function checkDiag(colIdx, dia) {
 
 
 initialize();
-render();
+check();
