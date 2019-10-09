@@ -11,71 +11,77 @@
 </head>
 
 <body>
-        <h1>Connect Four</h1>
-        <div id="nav" class="ui-widget">
+    <h1>Connect Four</h1>
+    <div id="nav" class="ui-widget">
         <h2 id="objective">Objective</h2>
-        <p>The aim for both players is to make a straight line of four own pieces; the line can be vertical, horizontal or diagonal.</p>
+        <p>The aim for both players is to make a straight line of four own pieces; the line can be vertical, horizontal
+            or diagonal.</p>
+        <h2 id="howToplay">How to Play</h2>
+        <p>
+            Moves entails in placing new pieces on the board; pieces slide downwards from upper holes, falling down to the last row or piling up on the last piece introduced in the same column. 
+        </p>
         <h2 id="player1">Player 1</h2>
         <h2 id="player2">Player 2</h2>
-        <button>New Game</button> 
-        </div>
-        <table>
-            <tr>
-                <td id="cell-0" data-col="0"></td>
-                <td id="cell-1" data-col="1"></td>
-                <td id="cell-2" data-col="2"></td>
-                <td id="cell-3" data-col="3"></td>
-                <td id="cell-4" data-col="4"></td>
-                <td id="cell-5" data-col="5"></td>
-                <td id="cell-6" data-col="6"></td>
-            </tr>
-            <tr>
-                <td id="cell-7" data-col="0"></td>
-                <td id="cell-8" data-col="1"></td>
-                <td id="cell-9" data-col="2"></td>
-                <td id="cell-10" data-col="3"></td>
-                <td id="cell-11" data-col="4"></td>
-                <td id="cell-12" data-col="5"></td>
-                <td id="cell-13" data-col="6"></td>
-            </tr>
-            <tr>
-                <td id="cell-14" data-col="0"></td>
-                <td id="cell-15" data-col="1"></td>
-                <td id="cell-16" data-col="2"></td>
-                <td id="cell-17" data-col="3"></td>
-                <td id="cell-18" data-col="4"></td>
-                <td id="cell-19" data-col="5"></td>
-                <td id="cell-20" data-col="6"></td>
-            </tr>
-            <tr>
-                <td id="cell-21" data-col="0"></td>
-                <td id="cell-22" data-col="1"></td>
-                <td id="cell-23" data-col="2"></td>
-                <td id="cell-24" data-col="3"></td>
-                <td id="cell-25" data-col="4"></td>
-                <td id="cell-26" data-col="5"></td>
-                <td id="cell-27" data-col="6"></td>
-            </tr>
-            <tr>
-                <td id="cell-28" data-col="0"></td>
-                <td id="cell-29" data-col="1"></td>
-                <td id="cell-30" data-col="2"></td>
-                <td id="cell-31" data-col="3"></td>
-                <td id="cell-32" data-col="4"></td>
-                <td id="cell-33" data-col="5"></td>
-                <td id="cell-34" data-col="6"></td>
-            </tr>
-            <tr>
-                <td id="cell-35" data-col="0"></td>
-                <td id="cell-36" data-col="1"></td>
-                <td id="cell-37" data-col="2"></td>
-                <td id="cell-38" data-col="3"></td>
-                <td id="cell-39" data-col="4"></td>
-                <td id="cell-40" data-col="5"></td>
-                <td id="cell-41" data-col="6"></td>
-            </tr>
-        </table>
-        <h2 id="message"></h2>
-        <script src="js/connect4.js"></script>
-    </body>
+        <button>New Game</button>
+    </div>
+    <table>
+        <tr>
+            <td id="cell-0" data-col="0"></td>
+            <td id="cell-1" data-col="1"></td>
+            <td id="cell-2" data-col="2"></td>
+            <td id="cell-3" data-col="3"></td>
+            <td id="cell-4" data-col="4"></td>
+            <td id="cell-5" data-col="5"></td>
+            <td id="cell-6" data-col="6"></td>
+        </tr>
+        <tr>
+            <td id="cell-7" data-col="0"></td>
+            <td id="cell-8" data-col="1"></td>
+            <td id="cell-9" data-col="2"></td>
+            <td id="cell-10" data-col="3"></td>
+            <td id="cell-11" data-col="4"></td>
+            <td id="cell-12" data-col="5"></td>
+            <td id="cell-13" data-col="6"></td>
+        </tr>
+        <tr>
+            <td id="cell-14" data-col="0"></td>
+            <td id="cell-15" data-col="1"></td>
+            <td id="cell-16" data-col="2"></td>
+            <td id="cell-17" data-col="3"></td>
+            <td id="cell-18" data-col="4"></td>
+            <td id="cell-19" data-col="5"></td>
+            <td id="cell-20" data-col="6"></td>
+        </tr>
+        <tr>
+            <td id="cell-21" data-col="0"></td>
+            <td id="cell-22" data-col="1"></td>
+            <td id="cell-23" data-col="2"></td>
+            <td id="cell-24" data-col="3"></td>
+            <td id="cell-25" data-col="4"></td>
+            <td id="cell-26" data-col="5"></td>
+            <td id="cell-27" data-col="6"></td>
+        </tr>
+        <tr>
+            <td id="cell-28" data-col="0"></td>
+            <td id="cell-29" data-col="1"></td>
+            <td id="cell-30" data-col="2"></td>
+            <td id="cell-31" data-col="3"></td>
+            <td id="cell-32" data-col="4"></td>
+            <td id="cell-33" data-col="5"></td>
+            <td id="cell-34" data-col="6"></td>
+        </tr>
+        <tr>
+            <td id="cell-35" data-col="0"></td>
+            <td id="cell-36" data-col="1"></td>
+            <td id="cell-37" data-col="2"></td>
+            <td id="cell-38" data-col="3"></td>
+            <td id="cell-39" data-col="4"></td>
+            <td id="cell-40" data-col="5"></td>
+            <td id="cell-41" data-col="6"></td>
+        </tr>
+    </table>
+    <h2 id="message"></h2>
+    <script src="js/connect4.js"></script>
+</body>
+
 </html>
