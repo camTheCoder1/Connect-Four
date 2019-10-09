@@ -18,8 +18,19 @@ div{
 }
 h1 {
     color: whitesmoke;
-    font-size: 50px;
+    font-size: 80px;
     margin: 0 auto;
+    font-family: 'Righteous', cursive;
+
+}
+
+#message{
+    color: whitesmoke;
+    font-size: 40px;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    font-family: 'Righteous', cursive;
 }
 
 #player1 {
@@ -27,7 +38,8 @@ h1 {
     font-size: 40px;
     display: flex;
     align-content: center;
-    justify-content: flex-start
+    justify-content: flex-start;
+    font-family: 'Righteous', cursive;
 }
 
 #player2 {
@@ -36,6 +48,7 @@ h1 {
     display: flex;
     align-content: center;
     justify-content: flex-start;
+    font-family: 'Righteous', cursive;
 }
 
 body {
