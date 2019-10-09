@@ -53,13 +53,13 @@ h1 {
 }
 
 body {
-    background-color: peachpuff;
+    background-color: lightblue;
     color: white;
 }
 
 table {
     background-size: contain;
-    background-color: peachpuff;
+    background-color:lightblue;
     font-size: 40px;
     border-spacing: collapse; 
     border-collapse: separate;
