@@ -35,7 +35,13 @@ h1 {
 }
 
 #howToPlay{
-   
+    color:rgb(85, 82, 82);
+    font-size: 40px;
+    text-decoration: underline;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    font-family: 'Righteous', cursive
 }
 
 p{
